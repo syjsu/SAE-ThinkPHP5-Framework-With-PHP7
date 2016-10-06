@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!-- 加载Bootstrap核心CSS -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- 自适应 禁用屏幕缩放 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- 字体修改 -->
+<style type="text/css">body,button,input,select,textarea,h1,h2,h3,h4,h5,h6 {
+font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+</style>
+
+<title>{$title="SmallSu In SAE 小小酥在SAE上的云框架"}</title>
+
+<!-- QQ登录 -->
+<meta property="qc:admins" content="5250355003041161004162163757"/>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101345294" data-redirecturi="http://littlesmallsu.applinzi.com/" charset="utf-8"></script>
+
+</head>
+
+<body>
+<!-- 占据设备100%的宽度 -->
+<div class="container-fluid">
+
+<div class="page-header">
+    <h1><a href="{{path}}">SmallSu In SAE</a><small>--小小酥在SAE上的云框架</small></h1>
+
+</div>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <!-- 导航头部 -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="http://{$_SERVER['SERVER_NAME']}">首页</a>
+    </div>
+
+    <!-- 导航内容 -->
+    <div>
+
+    <!-- 页面菜单 -->
+    <ul class="nav navbar-nav navbar-left">
+    <!-- 第一标签-我的项目 -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        我的项目
+        <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Unity3D</a></li>
+            <li><a href="#">UE4</a></li>
+            <li class="divider"></li>
+            <li><a href="#">分离的链接</a></li>
+            <li class="divider"></li>
+            <li><a href="#">另一个分离的链接</a></li>
+        </ul>
+    </li>
+    </ul>
+
+    <!-- 我的介绍 -->
+    <a href="/scratch" class="navbar-text navbar-left">Scratch项目</a>
+
+    <!-- 我的介绍 -->
+    <a href="/login" class="navbar-text navbar-left">登录</a>
+    <!-- 我的介绍 -->
+    <a href="/logout" class="navbar-text navbar-left">登出</a>
+
+    <!--   QQ登录按钮   -->
+    <span id="qqLoginBtn" class="navbar-text navbar-left"></span>
+    <script type="text/javascript">
+        QC.Login({
+           btnId:"qqLoginBtn",    //插入按钮的节点id
+           size: "A_M"
+    });
+    </script>
+
+    <!-- 搜索内容 -->
+    <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+    <div class="row">
+  	<div class="col-xs-8">
+        <input type="text" class="form-control" placeholder="请输入搜索的内容">
+    </div>
+    <div class="col-xs-4">
+        <button type="submit" class="btn btn-default">搜索</button>
+    </div>
+    </div>
+    </div>
+    </form>
+
+    </div>
+</div>
+</nav>
+
+<!-- 消息闪现部分 -->
+<!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="alert alert-success" id="myMessage">
+        <a href="#" class="close" data-dismiss="alert">
+            &times;
+        </a>
+        <strong>温馨提示：</strong>
+        {% for category, message in messages %}
+            <p class="{{ category }}">
+                {% if message %}
+                    {{message}}
+                {% endif %}
+            </p>
+        {% endfor %}
+
+    </div>
+    {% endif %}
+{% endwith %} -->
+
+<script>
+// $(document).ready(function(){
+//     $("#myMessage").hide();
+//     $("#myMessage").slideDown("slow");
+// });
+</script>
+
+<!-- 内容 -->
+<div class="jumbotron">
+        <p>{$message="默认内容"}</p>
+</div>
+
+<div class="panel panel-primary">
+<div class="panel-heading">友情链接</div>
+<div class="panel-body">
+    <table class="table">
+        <tr>
+            <td><a href="http://weibo.com/syjsu" target="_blank">微博@小小酥XX</a></td>
+            <td><a href="http://www.jianshu.com/users/d323464794f3" target="_blank">简书@syjsu</a></td>
+            <td><a href="https://github.com/syjsu" target="_blank">Github@syjsu</a></td>
+            <td><a href="http://sae.sina.com.cn" target="_blank">Sina App Engine服务器</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://www.lib.gdpu.edu.cn/" target="_blank">广东药科大学</a></td>
+            <td><a href="http://xthinking.net/" target="_blank">艾想科技</a></td>
+            <td><a href="http://docs.jinkan.org/docs/flask/" target="_blank">Flask</a></td>
+            <td><a href="http://docs.jinkan.org/docs/jinja2/" target="_blank">Jinja2</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://omz-software.com/pythonista/docs/" target="_blank">Pythonista</a></td>
+            <td><a href="http://www.jquery123.com/" target="_blank">jQuery</a></td>
+            <td><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank">BeautifulSoup</a></td>
+            <td><a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank">Requests</a></td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</div>
+</div>
+
+<div>
+    <p class="text-center" >Copyright <span style="font-family:arial;">&copy; </span>小小酥XXS Powered By ThinkPHP&TopThink Running On SAE Contact syjsu@qq.com</p>
+</div>
+
+ </div>
+
+ </body>
+ </html>

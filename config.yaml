@@ -1,0 +1,24 @@
+name: littlesmallsu
+version: 5
+handle:
+
+  #修改路由设置
+  # - rewrite: if(!is_dir() && !is_file() && path~"^(.*)$") goto "index.php/$1"
+  - rewrite: if (path ~ "^/$") goto "public/index.php"
+  - rewrite: if(!is_dir() && !is_file() && path~"^(.*)$") goto "public/index.php/$1"
+
+  #修改404页面
+  #- errordoc: 404 /error/404.html
+
+  # 强制使用https访问
+  - rewrite: if (%{REQ:X-Forwarded-Proto} != "https") goto "https://%{HTTP_HOST}%{REQUEST_URI}"
+
+  #压缩页面
+  - compress: if ( out_header["Content-Length"]>=50) compress
+  - compress: if ( out_header["Content-type"]=="text/css" ) compress
+  - compress: if ( out_header["Content-type"]=="text/javascript" ) compress
+  - compress: if ( out_header["Content-type"]=="text/html" ) compress
+  - compress: if ( out_header["Content-type"]=="image/png" ) compress
+  - compress: if ( out_header["Content-type"]=="image/jpeg" ) compress
+  - compress: if ( out_header["Content-type"]=="text/plain" ) compress
+  - compress: if ( out_header["Use-Compress"] == "1") compress
